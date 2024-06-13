@@ -1,0 +1,36 @@
+section{
+  margin-top: 100px;
+}
+.bigContainer{
+    margin-left: 15%;
+    width: 70%;
+
+}
+.productImage{
+    height: 80px;
+}
+/* .Date{
+    margin-left: 500px;
+}
+.DateText{
+    margin-left:530px ;
+} */
+ .centerr{
+    margin-left: 40px;
+ }
+ .Centerfelnos{
+    margin-left: 200px;
+ }
+ .btnn{
+  background-color: #8a2be4;
+  border-radius:20px ;
+  width: 200px;
+  height: 44px;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 1px solid #8a2be4;
+}
+.btnn:hover{
+  background-color: rgba(138, 43, 228,0.7);
+}

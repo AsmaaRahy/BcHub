@@ -1,0 +1,30 @@
+<section>
+  <div class="container">
+
+      <div class="row g-3 position-relative mt-5">
+        <div class="col-md-3" *ngFor="let one of all" [title]="one.description">
+         <div [routerLink]="['/serviceDetails/',one.id]">
+          <div class="product p-2 bg-light cardd">
+              <div class="align-content-center  ">
+                  <span class="d-flex justify-content-center m-2 title" [title]="one.name"><b>{{one.name }}</b> </span>
+                  <span class="d-flex justify-content-center">{{one.description | biggerTrim}} ...
+                      <!-- <span *ngIf="one.description.split(' ').length >8">...</span> -->
+                  </span>
+                  <!-- <br> -->
+              <span class="d-flex justify-content-center align-items-center ">
+                  <!-- <img src="../../../assets/images/2png.jpg"> -->
+                  <img [src]="one.imageUrl" class="w-100  image m-2">
+              </span>
+
+              </div>
+              <!-- <span>{{one.description}}</span> -->
+          </div>
+        </div>
+      </div>
+      </div>
+      <div *ngIf="isLoading" class="position-absolute bg-black opacity-50 w-100 h-100 top-0 start-0 d-flex justify-content-center align-items-center ">
+          <i class="fa fa-spin fa-spinner text-main fa-2xl"></i>
+      </div>
+    </div>
+  
+</section>

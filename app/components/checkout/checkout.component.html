@@ -1,0 +1,84 @@
+<div class="container m-auto pt-5 mt-5">
+  <div class="recit pt-5 " *ngIf="isOrdered; else Ordered">
+    <p class="text-black-50"><a routerLink="/cart"><i class="fa-solid fa-arrow-left text-black"></i></a> checkout step</p>
+    <!-- <h1>Payment Info</h1>
+    <h2>Payment Method</h2>
+    <div class="methods d-flex align-items-start justify-content-between">
+      <div class="crdit_card">
+        <button>Credit Card'</button>
+      </div>
+      <div class="paypal">
+        <button>Pay Pal</button>
+      </div>
+    </div>
+    <div class="cardholder">
+      <h2>Cardholder Name</h2>
+      <input type="text" class="form-control" />
+    </div>
+    <div class="cardholder">
+      <h2>Card Number</h2>
+      <input type="text" class="form-control" />
+    </div>
+
+    <div class="credit-card">
+      <div class="labelss d-flex">
+        <div class="creditlabel">
+          <label for="expiration-date">Expiration Date:</label>
+        </div>
+        <div class="cvvlabel">
+          <label for="cvv">CVV:</label>
+        </div>
+      </div>
+      <div class="inputts d-flex">
+        <div class="month">
+          <input
+            type="text"
+            id="expiration-date"
+            placeholder="MM "
+            maxlength="2"
+          />
+        </div>
+        <div class="year">
+          <input
+            type="text"
+            id="expiration-date"
+            placeholder=" YY"
+            maxlength="2"
+          />
+        </div>
+        <div class="cvvCode">
+          <input type="text" id="cvv" placeholder="CVV" maxlength="3" />
+        </div>
+      </div>
+    </div>
+    <button class="Confirmbtn">Confirm & Pay $ 37.17</button> -->
+    <div class="mt-5 form">
+      <form  (ngSubmit)="handelOrderForm(secNum,address)" [formGroup]="orderForm" class="h" >
+        <input type="number" class="d-flex b mt-3 form-control " name="secNum" [(ngModel)]="secNum" id="secNum" formControlName="secNum" placeholder="Enter your phone number :">
+        <div *ngIf="orderForm.get('secNum')?.errors && (orderForm.get('secNum')?.touched) || (orderForm.get('secNum')?.value.Length>0)" class="alert  alert-danger b d-flex form-control mt-1 ">
+        <p *ngIf="orderForm.get('secNum')?.getError('required')"> Mobile Number is Required</p>
+        </div>
+
+        <input type="text" class="d-flex b mt-3 form-control " name="address" [(ngModel)]="address" id="address" formControlName="address" placeholder="Put your detailed address :  (Optional)">
+        <div *ngIf="orderForm.get('address')?.errors && (orderForm.get('address')?.touched) || (orderForm.get('address')?.value.Length>0)" class="alert  alert-danger b d-flex form-control mt-1 ">
+        <p *ngIf="orderForm.get('address')?.getError('required')"> Address is Required</p>
+        </div>
+        <!-- <input type="text" class="d-flex b mt-3 form-control " id="code" name="code" [(ngModel)]="code" formControlName="code" placeholder="Put Your code">
+        <div *ngIf="BookingForm.get('code')?.errors && (BookingForm.get('code')?.touched) || (BookingForm.get('code')?.value.Length>0)" class="alert  alert-danger b d-flex form-control mt-1 ">
+        <p *ngIf="BookingForm.get('code')?.getError('required')"> Discount Code is Required</p>
+        </div> -->
+
+        <button  [disabled]=""class="btnn button  d-flex justify-content-center align-items-center" >Submit
+            <!-- <i *ngIf="isLoading" class="fa fa-spin fa-spinner"></i> -->
+        </button>
+    </form>
+    </div>
+  </div>
+  <ng-template #Ordered>
+    <div class="text-success bookingsuccess" >
+       <h1 class="mt-5"> You have ordered successfully!</h1>
+       <img src="../../../assets/images/greencheckk.png" class="greenCheck">
+    </div>
+   </ng-template>
+
+</div>
